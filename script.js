@@ -1,24 +1,27 @@
 function calculateWaterBill(consumption) {
     let bill = 0;
-
+    if(consumption > 50) {
+        bill += (consumption - 50) * 75.55 ;
+        consumption = 50;
+    }
     if (consumption > 40) {
-        bill += (consumption - 40) * 57.36; // Calculate for >40 kl band
+        bill += (consumption - 40) * 72.37 ; // Calculate for >40 kl band
         consumption = 40;
     }
     if (consumption > 30) {
-        bill += (consumption - 30) * 52.44; // Calculate for >30-40 kl band
+        bill += (consumption - 30) * 57.36; // Calculate for >30-40 kl band
         consumption = 30;
     }
     if (consumption > 20) {
-        bill += (consumption - 20) * 37.95; // Calculate for >20-30 kl band
+        bill += (consumption - 20) * 52.44; // Calculate for >20-30 kl band
         consumption = 20;
     }
     if (consumption > 15) {
-        bill += (consumption - 15) * 27.07; // Calculate for >15-20 kl band
+        bill += (consumption - 15) * 37.95; // Calculate for >15-20 kl band
         consumption = 15;
     }
     if (consumption > 10) {
-        bill += (consumption - 10) * 25.94; // Calculate for >10-15 kl band
+        bill += (consumption - 10) * 27.07; // Calculate for >10-15 kl band
         consumption = 10;
     }
     if (consumption > 6) {
