@@ -17,9 +17,8 @@ function calculateWaterBill(consumption) {
         bill += (consumption - 15) * 27.07; // Calculate for >10-15 kl band
         consumption = 15;
     }
-    if (consumption > 10) {
-        bill += (consumption - 10) * 25.94; // Calculate for >6-10 kl band
-        consumption = 10;
+    if (consumption > 6) {
+        bill += (consumption - 6) * 25.94; // Calculate for >6-10 kl band
     }
     // The first 6 kl is free, so no charge for 0-6 kl.
 
@@ -36,4 +35,3 @@ function calculate() {
     let totalBill = calculateWaterBill(consumption);
     document.getElementById("result").innerText = `R${totalBill.toFixed(2)}`;
 }
-
